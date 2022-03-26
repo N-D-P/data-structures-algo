@@ -1,6 +1,6 @@
 Array - DSA
 
-1-> Reverse the string
+1-> Reverse the strings
     void reverseString(vector<char>& s) {
             
         int i=0,j=s.size()-1;
