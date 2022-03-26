@@ -1,0 +1,11 @@
+# To add code to staging area
+git add .    
+
+# To check status
+git status
+
+# To commit
+git commit -m "message_here"
+
+# To push to origin
+git push -u origin origin/master
