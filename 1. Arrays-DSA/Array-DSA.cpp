@@ -149,7 +149,8 @@ void rotate(int arr[] , int n)
     arr[0] = last;
 }
 
-8-> Kandane's Algo
+8-> Kandane's 
+    Question Link - https://leetcode.com/problems/maximum-subarray/;
  int maxSubArray(vector<int>& nums) {
         int max_local=nums[0] , max_global=nums[0];
         for(int i=1;i<nums.size();i++)
