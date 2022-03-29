@@ -75,13 +75,13 @@ Array - DSA
  }
 
 3.2-> Partial Sorting 
-  int findKthLargest(vector<int>& nums, int k) {
+    int findKthLargest(vector<int>& nums, int k) {
         partial_sort(nums.begin(), nums.begin() + k, nums.end(), greater<int>());
         return nums[k - 1];
     }
 
 3.3-> Max Heap 
- int findKthLargest(vector<int>& nums, int k) {
+    int findKthLargest(vector<int>& nums, int k) {
         priority_queue<int> pq(nums.begin(), nums.end());
         for (int i = 0; i < k - 1; i++) {
             pq.pop();
@@ -92,66 +92,68 @@ Array - DSA
 3.5-> Partioning
 
 5-> Move all the negative elements to one side of the array 
-void shiftall(int arr[], int left, int right)
-{
-  // Loop to iterate over the 
-  // array from left to the right
-  while (left<=right)
-  {
-    // Condition to check if the left
-    // and the right elements are 
-    // negative
-    if (arr[left] < 0 && arr[right] < 0)
-      left+=1;
-     
-    // Condition to check if the left 
-    // pointer element is positive and 
-    // the right pointer element is negative
-    else if (arr[left]>0 && arr[right]<0)
+    void shiftall(int arr[], int left, int right)
     {
-      int temp=arr[left];
-      arr[left]=arr[right];
-      arr[right]=temp;
-      left+=1;
-      right-=1;
+    // Loop to iterate over the 
+    // array from left to the right
+        while (left<=right)
+        {
+            // Condition to check if the left
+            // and the right elements are 
+            // negative
+            if (arr[left] < 0 && arr[right] < 0)
+            left+=1;
+            
+            // Condition to check if the left 
+            // pointer element is positive and 
+            // the right pointer element is negative
+            else if (arr[left]>0 && arr[right]<0)
+            {
+            int temp=arr[left];
+            arr[left]=arr[right];
+            arr[right]=temp;
+            left+=1;
+            right-=1;
+            }
+            
+            // Condition to check if both the 
+            // elements are positive
+            else if (arr[left]>0 && arr[right] >0)
+            right-=1;
+            else{
+            left += 1;
+            right -= 1;
+            }
+        }
     }
-     
-    // Condition to check if both the 
-    // elements are positive
-    else if (arr[left]>0 && arr[right] >0)
-      right-=1;
-    else{
-      left += 1;
-      right -= 1;
-    }
-  }
-}
 
 6-> Find Union 
-int doUnion(int a[], int n, int b[], int m)  {
-    map<int,int> freq;
-    for(int i=0;i<n;i++)
-        freq[a[i]]++;
-    for(int j=0;j<m;j++)
-        freq[b[j]]++;
-    return freq.size();
-}
+    int doUnion(int a[], int n, int b[], int m)  {
+        map<int,int> freq;
+        for(int i=0;i<n;i++)
+            freq[a[i]]++;
+        for(int j=0;j<m;j++)
+            freq[b[j]]++;
+        return freq.size();
+    }
 
 
 7-> Clockwise rotation
-void rotate(int arr[] , int n)
-{
-    int last = arr[n-1];
-    for(int i=n-1;i>=1;i--)
+    void rotate(int arr[] , int n)
     {
-        arr[i] = arr[i-1];
+        int last = arr[n-1];
+        for(int i=n-1;i>=1;i--)
+        {
+            arr[i] = arr[i-1];
+        }
+        arr[0] = last;
     }
-    arr[0] = last;
-}
 
-8-> Kandane's 
+8-> Kandane's Algorithm
+    
     Question Link - https://leetcode.com/problems/maximum-subarray/;
- int maxSubArray(vector<int>& nums) {
+    
+    int maxSubArray(vector<int>& nums) {
         int max_local=nums[0] , max_global=nums[0];
         for(int i=1;i<nums.size();i++)
         {
@@ -162,6 +164,8 @@ void rotate(int arr[] , int n)
     }
 
 9-> Shortest Unsorted Continuous Subarray
+
+    Question Link -> https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
 
 9.1-> TC-O(log N) SC-O(N);
     int findUnsortedSubarray(vector<int>& nums) {
@@ -179,7 +183,8 @@ void rotate(int arr[] , int n)
         return end-start+1;
     }
 
-9.2->   public int findUnsortedSubarray(int[] nums) {
+9.2->   
+    public int findUnsortedSubarray(int[] nums) {
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         int n = nums.length;
         
