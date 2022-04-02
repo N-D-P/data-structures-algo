@@ -267,6 +267,7 @@ Array - DSA
 
 
 12->  Minimise the maximum difference between heights 
+    Question Link -> https://practice.geeksforgeeks.org/problems/minimize-the-heights3351/1
 
     Given an array arr[] denoting heights of N towers and a positive integer K, you have to modify the height of each tower either by increasing or 
     decreasing them by K only once. After modifying, height should be a non-negative integer. 
@@ -296,7 +297,7 @@ Array - DSA
        for(int i=0;i<n-1;i++)
        {
             minn = min(smallest , arr[i+1]-k);
-            maxx = max(largest , arr[i]+k); //we choose immediate pair becase that is the minimum diff we can get for current pair insorted array
+            maxx = max(largest , arr[i]+k); //we choose immediate pair because that is the minimum diff we can get for current pair in sorted array
             if(minn < 0) continue;
             answer = min(answer , maxx-minn);
        }
@@ -307,6 +308,24 @@ Array - DSA
 
 13.1-> Jump Game I  https://leetcode.com/problems/jump-game/
 
+
+    bool canJump(vector<int>& nums) {
+        // 163/169 passed
+        if(nums.size() == 1) return true;
+        if(nums[0] == 0) return false;
+        for(int i=0;i<nums.size()-1;i++) {
+            if(nums[i] + i >= nums.size()-1) return true;
+            while (nums[nums[i] + i] == 0) {
+                if(nums[i] == 1) return false;
+                nums[i]--;
+                if(nums[i] == 0) {
+                    return false;
+                }
+            };
+        }
+        return true;
+    }
+    
     bool canJump(vector<int>& nums) {
         int n = nums.size();
         int lastGoodPos = n-1;
@@ -351,7 +370,7 @@ floyd cycle detection method
         //Floyd's Tortoise and Hare (Cycle Detection)
         int slow=nums[0],fast=nums[0];
         
-        do //phase 1
+        do //phase 1hhh
         {
             slow = nums[slow];
             fast = nums[nums[fast]];
