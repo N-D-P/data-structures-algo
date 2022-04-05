@@ -149,7 +149,7 @@ Array - DSA
         arr[0] = last;
     }
 
-8-> Kandane's Algorithm
+8-> Kandanes Algorithm
     
     Question Link - https://leetcode.com/problems/maximum-subarray/;
     
