@@ -22,7 +22,7 @@ Matrix-DSA
                 result.push_back(matrix[i][left]);
             left++;
         }
-        return result;
+        return result ;
     }
 
 2->Search in 2D matrix
