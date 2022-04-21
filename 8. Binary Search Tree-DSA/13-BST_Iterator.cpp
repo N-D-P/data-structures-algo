@@ -1,0 +1,65 @@
+// https://leetcode.com/problems/binary-search-tree-iterator/
+/*
+Implement the BSTIterator class that represents an iterator over the in-order traversal
+of a binary search tree (BST):
+
+BSTIterator(TreeNode root) Initializes an object of the BSTIterator class.
+The root of the BST is given as part of the constructor. The pointer should be
+initialized to a non-existent number smaller than any element in the BST.
+boolean hasNext() Returns true if there exists a number in the traversal to the right of the pointer, otherwise returns false.
+int next() Moves the pointer to the right, then returns the number at the pointer.
+
+Referred Striver's video
+*/
+stack<TreeNode *> stk;
+BSTIterator(TreeNode *root)
+{
+    pushLeft(root);
+}
+void pushLeft(TreeNode *root)
+{
+    while (root)
+    {
+        stk.push(root);
+        root = root->left;
+    }
+}
+int next()
+{
+    TreeNode *temp = stk.top();
+    stk.pop();
+    if (temp->right)
+        pushLeft(temp->right);
+    return temp->val;
+}
+
+bool hasNext()
+{
+    return !stk.empty();
+}
+
+// Approach 2
+vector<int> arr;
+int index;
+BSTIterator(TreeNode *root)
+{
+    inorder(root);
+    index = -1;
+}
+void inorder(TreeNode *root)
+{
+    if (root == nullptr)
+        return;
+    inorder(root->left);
+    arr.push_back(root->val);
+    inorder(root->right);
+}
+int next()
+{
+    return arr[++index];
+}
+
+bool hasNext()
+{
+    return index + 1 < arr.size();
+}
