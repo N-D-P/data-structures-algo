@@ -1,5 +1,5 @@
-Question Link -> https://leetcode.com/problems/sort-colors/
-Video Link -> https://www.youtube.com/watch?v=oaVa-9wmpns
+// Question Link -> https://leetcode.com/problems/sort-colors/
+// Video Link -> https://www.youtube.com/watch?v=oaVa-9wmpns
 
 1-> Sort the array
 
