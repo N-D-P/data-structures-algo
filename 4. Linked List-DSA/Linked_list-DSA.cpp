@@ -1,5 +1,16 @@
 Linked_list-DSA
 
+1 ->  Reverse a List
+2 ->  Detect a cycle in List 
+3 ->  Return the staring point of Loop
+4 ->  Remove Loop from List 
+5 ->  Remove duplicates in sorted Linked list
+6 ->  Remove duplicates in unsorted linked list
+7 ->  Swap first and last element of linked list
+8 ->  Add One to the Linked_list
+9 ->  Add two Number represented by Linked_list
+10->  Interaction point of 2 list
+
 1->Reverse a Linked list
     //Iterative
         ListNode* reverseList(ListNode* head) {
@@ -22,8 +33,7 @@ Linked_list-DSA
             return newhead; //up 
         }
 
-2-> 
-3-> Detect a cycle in Linked list 
+2-> Detect a cycle in Linked list 
     bool hasCycle(ListNode *head) {
         if(head == NULL) return false;
         ListNode *slow = head, *fast = head;
@@ -36,7 +46,7 @@ Linked_list-DSA
         return false;
     }
 
-4-> Return the starting point of the loop 
+3-> Return the starting point of the loop 
     ListNode *detectCycle(ListNode *head) {
         if(head == NULL) return NULL;
         ListNode*slow=head,*fast=head;
@@ -67,7 +77,7 @@ Linked_list-DSA
         */
     }
 
-5-> Remove Loop from Linked list
+4-> Remove Loop from Linked list
 
         ListNode *detectCycle(ListNode *head) {
         if(head == NULL) return NULL;
@@ -99,7 +109,7 @@ Linked_list-DSA
     }
     
 
-6-> Remove duplicates in sorted Linked list 
+5-> Remove duplicates in sorted Linked list 
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode *first=head;
         while(first!=NULL && first->next!=NULL){
@@ -112,7 +122,7 @@ Linked_list-DSA
         return head;
     }
 
-7-> Remove duplicates in unsorted linked list 
+6-> Remove duplicates in unsorted linked list 
     void removeDuplicates(struct Node *start)
     {
         // Hash to store seen values
@@ -138,7 +148,7 @@ Linked_list-DSA
         }
     }
 
-8-> Swap first and last element of linked list 
+7-> Swap first and last element of linked list 
     void moveToFront(Node **head_ref)  
     {  
         if (*head_ref == NULL || (*head_ref)->next == NULL)  
@@ -161,7 +171,7 @@ Linked_list-DSA
         *head_ref = last;  
     }  
 
-9-> Add One to the Linked_list
+8-> Add One to the Linked_list
 
 
     Node *addOne(Node *head)
@@ -194,7 +204,7 @@ Linked_list-DSA
     return head;
     }
 
-10-> Add two Number represnted by Linked_list
+9-> Add two Number represnted by Linked_list
 
         ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         
@@ -229,4 +239,4 @@ Linked_list-DSA
         
     }
 
-11-> 
+10-> 

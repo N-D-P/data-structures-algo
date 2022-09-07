@@ -23,4 +23,25 @@ consider i/p 2,2,1,3,1,2,2,2,1
 
 divided in 3 sections, in first section majority ele is 2, but it is compensated with 
 1,3 which is minority element. In second section there are equal number of elements
-Finally in third section the 2 dominates the   
+Finally in third section the 2 dominates the Majority element.
+
+int majorityElement(vector<int> nums) {
+    int cnt=0, ele;
+
+    for(int i=0, i<nums.size();  i++) {
+        
+        if(cnt == 0) {
+            ele = nums[i];
+            cnt++;
+        }
+
+        if(ele == nums[i]) {
+            cnt++;
+        }
+        else {
+            cnt--;
+        }
+    }
+
+    return ele;
+}
